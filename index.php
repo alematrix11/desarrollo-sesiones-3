@@ -1,6 +1,7 @@
 <?php
 
-
+//Cada vez que utilices sesiones se debe declarar el siguiente metodo
+session_start();
 
 ?>
 
@@ -26,11 +27,14 @@
     <h1>Sesiones con PHP</h1>
     
     <!--Solo para iniciar sesion-->
-    <a href="sesion.php">Iniciar sesion</a>
+    <a class="ml-4" href="sesion.php">Iniciar sesion</a>
     
     <!--Solo para se accesible si se inicio sesion-->
-    <a href="contenido.php">Contenido protegido</a>
+    <a class="ml-4" href="contenido.php">Contenido protegido</a>
     
+    <!--Se crea un mensaje dinamico para cuando este iniciada la sesion-->
+    <!--Se usa el ? para mostrar la condicion verdadera, y se usa : para mostrar la condicion falsa-->
+    <h1>Usted esta como: <?php echo isset($_SESSION['admin']) ? $_SESSION['admin'].' , puede navegar por la plataforma ' : 'invitado' ?></h1>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
